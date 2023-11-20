@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, DateTime, String, Numeric, Text
 from api.src.infra.adapters.database.base import Base
 
 
-class Users(Base):
+class UsersModel(Base):
 
     __tablename__ = "users"
 

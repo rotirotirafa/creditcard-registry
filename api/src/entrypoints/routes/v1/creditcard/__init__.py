@@ -1,4 +1,10 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+
+from sqlalchemy.orm import Session
+
+from api.src.core.schemas.creditcard import CreditcardInputSchema
+from api.src.core.usecases.creditcard_usecase import CreditcardUseCase
+from api.src.infra.adapters.database.session import get_db
 
 CreditCardRouter = APIRouter(
     prefix='/credit-card'
@@ -6,15 +12,27 @@ CreditCardRouter = APIRouter(
 
 
 @CreditCardRouter.get('/')
-def list_credit_cards() -> dict:
-    return {"v1": "Creditcard Registry API"}
+def get(db: Session = Depends(get_db)):
+    try:
+        creditcard_use_case = CreditcardUseCase(db)
+        return creditcard_use_case.list_creditcards()
+    except Exception as ex:
+        raise ex
 
 
 @CreditCardRouter.get('/{creditcard_number}')
-def get_credit_card_by_number(creditcard_number: int) -> dict:
-    return {"number": creditcard_number}
+def get_one(creditcard_number: str, db: Session = Depends(get_db)):
+    try:
+        creditcard_use_case = CreditcardUseCase(db)
+        return creditcard_use_case.get_specific_creditcard_details(creditcard_number)
+    except Exception as ex:
+        raise ex
 
 
 @CreditCardRouter.post('/')
-def create_credit_card():
-    pass
+def create(payload: CreditcardInputSchema, db: Session = Depends(get_db)):
+    try:
+        creditcard_use_case = CreditcardUseCase(db)
+        return creditcard_use_case.create_creditcard(payload)
+    except Exception as ex:
+        raise ex
