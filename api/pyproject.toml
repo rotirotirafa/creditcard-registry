@@ -13,6 +13,7 @@ python-creditcard = {path = "../python-creditcard"}
 sqlalchemy = "^2.0.23"
 alembic = "^1.12.1"
 psycopg2 = "^2.9.9"
+pydantic = "^2.5.1"
 
 
 [build-system]

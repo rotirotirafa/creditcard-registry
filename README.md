@@ -1,17 +1,30 @@
 # Credit Card Registry API
 
-Description
+Descrição
 
-Instruções
+## Instruções de configuração
 
-Clone o repositório 
+1. Clone o repositório 
     
     git clone https://github.com/rotirotirafa/creditcard-registry
 
+2. Ainda na raiz do repositório, aproveite para subir o container do Postgres:````docker compose up -d````
+
+3. Acesse a pasta ```./api```
+
+Inicie o poetry, instale as dependencias no virtualenv criado:
+    
+    poetry init
+    poetry install
+    poetry shell
+
+
+***Verifique no final do documento nas observações o item 1 !!!***
 
 
 
-Verifique no final do documento nas observações o item 1.
+
+
     
 Observações:
 

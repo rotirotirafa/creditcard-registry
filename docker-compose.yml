@@ -6,7 +6,7 @@ services:
     image: postgres
     restart: always
     environment:
-      - POSTGRES_DB=creditcard
+      - POSTGRES_DB=creditcards
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     ports:
