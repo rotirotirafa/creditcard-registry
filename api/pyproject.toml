@@ -10,6 +10,9 @@ python = "^3.11"
 fastapi = "^0.104.1"
 uvicorn = "^0.24.0.post1"
 python-creditcard = {path = "../python-creditcard"}
+sqlalchemy = "^2.0.23"
+alembic = "^1.12.1"
+psycopg2 = "^2.9.9"
 
 
 [build-system]
