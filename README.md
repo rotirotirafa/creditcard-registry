@@ -10,4 +10,8 @@ Instructions
 
     RUN
 
-Observations
+Observações:
+
+- Não foi possível usar a lib [Python Creditcard](https://github.com/MaisTodos/python-creditcard) via Pip. Então fiz o clone do repo e instalei manualmente com o Poetry.
+- 
+
