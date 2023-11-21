@@ -18,6 +18,7 @@ class UsersUseCase:
                 email=payload.email,
                 password=hash_pw(payload.password)
             )
-            return user_object.email
+            user = self.repository.insert(user_object)
+            return user.email
         except Exception as ex:
             raise ex

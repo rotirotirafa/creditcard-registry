@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
-
 from sqlalchemy.orm import Session
 
+from api.src.infra.adapters.database.session import get_db
 from api.src.core.schemas.creditcard import CreditcardInputSchema
 from api.src.core.usecases.creditcard_usecase import CreditcardUseCase
-from api.src.infra.adapters.database.session import get_db
+
 
 CreditCardRouter = APIRouter(
     prefix='/credit-card'
