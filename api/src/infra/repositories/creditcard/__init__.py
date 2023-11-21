@@ -12,8 +12,11 @@ class CreditcardRepository:
         self.db = db
 
     def get_one_by_number(self, number: str):
-        response = self.db.query(CreditCardModel).filter_by(number=number).first()
-        return response
+        try:
+            response = self.db.query(CreditCardModel).filter_by(number=number).first()
+            return response
+        except Exception as ex:
+            raise ex
 
     def get_all(self) -> List[CreditCardModel] or List:
         try:

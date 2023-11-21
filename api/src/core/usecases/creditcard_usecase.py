@@ -6,7 +6,7 @@ from api.src.core.domain.creditcards.model import CreditCardModel
 from api.src.core.schemas.creditcard import CreditcardInputSchema
 from api.src.infra.repositories.creditcard import CreditcardRepository
 
-from utils import hash_credit_card_number, check_creditcard_hash
+from api.src.utils import hash_credit_card_number, check_creditcard_hash
 
 
 class CreditcardUseCase:
