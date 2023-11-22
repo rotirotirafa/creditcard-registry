@@ -32,6 +32,11 @@ Print Swagger:
     
 Observações:
 
+Optei por desenvolver a API com o FastAPI como framework para criação e exposição de rotas REST, tem sido usado 
+globalmente para criação de serviços que exigem eficiência.
+
+No banco de dados eu optei por Postgres, o PostgreSQL é conhecido por ser um sistema de gerenciamento de banco de dados relacional confiável e durável, oferecendo recursos ACID (Atomicidade, Consistência, Isolamento e Durabilidade).
+
 1. Não foi possível usar a lib [Python Creditcard](https://github.com/MaisTodos/python-creditcard) via Pip. Então fiz o clone do repo e instalei manualmente com o Poetry. (faça a mesma coisa caso não seja possível instalar a lib automaticamente)
 2. Esse projeto foi desenvolvido com Python 3.11 e com o gerenciador de dependecias Poetry.
 3. É necessário Docker para subir o banco de dados (Postgres)
