@@ -17,3 +17,9 @@ class UsersRepository:
             return user_object
         except Exception as ex:
             raise ex
+
+    def get_one(self, email: str):
+        try:
+            return self.db.query(UsersModel).filter_by(email=email).first()
+        except Exception as ex:
+            raise ex

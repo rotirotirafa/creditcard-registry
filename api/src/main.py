@@ -6,6 +6,7 @@ app = FastAPI()
 
 app.include_router(v1_router)
 
+
 @app.get('/')
 def health_check():
     return 'ok'

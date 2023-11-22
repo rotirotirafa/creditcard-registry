@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 
 from core.domain.users.model import UsersModel
+from core.schemas.auth import AuthInputSchema
 from core.schemas.users import UserInputSchema
 from infra.repositories.users import UsersRepository
 from utils import hash_pw
@@ -20,5 +21,11 @@ class UsersUseCase:
             )
             user = self.repository.insert(user_object)
             return user.email
+        except Exception as ex:
+            raise ex
+
+    def get_user_info_for_auth(self, payload: AuthInputSchema) -> UsersModel:
+        try:
+            return self.repository.get_one(payload.email)
         except Exception as ex:
             raise ex
